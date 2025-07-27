@@ -12,24 +12,28 @@
       overflow: hidden;
     }
     #warning {
-      position: absolute;
+      position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(255, 0, 0, 0.85);
+      background: rgba(255, 0, 0, 0.9);
       color: white;
       text-align: center;
       font-weight: bold;
-      padding: 10px;
-      z-index: 10;
-      font-family: sans-serif;
+      padding: 12px 10px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      z-index: 9999;
+      pointer-events: none;
     }
     #player {
       position: absolute;
-      top: 40px; /* Adjusted to sit below the warning */
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% - 40px);
+      height: 100%;
       border: 0;
+      z-index: 1;
     }
   </style>
 </head>
