@@ -11,17 +11,30 @@
       height: 100%;
       overflow: hidden;
     }
-    #player {
+    #warning {
       position: absolute;
       top: 0;
+      width: 100%;
+      background: rgba(255, 0, 0, 0.85);
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+      z-index: 10;
+      font-family: sans-serif;
+    }
+    #player {
+      position: absolute;
+      top: 40px; /* Adjusted to sit below the warning */
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 40px);
       border: 0;
     }
   </style>
 </head>
 <body>
+  <div id="warning">⚠️ MUST BE USING VPN & AD BLOCKER 🚫</div>
   <iframe id="player"
     src="https://veplay.top/stream/7df434de-ed1d-4ff1-aae7-c32f0f93821b"
     allowfullscreen="yes"
