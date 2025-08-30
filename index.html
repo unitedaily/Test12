@@ -10,22 +10,59 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
+      background:#000;
+      color:#fff;
+      animation: bodyPulse 3s infinite alternate;
     }
+    @keyframes bodyPulse {
+      from { background-color:#000; }
+      to { background-color:#220000; }
+    }
+
+    /* Neon flashing banner */
     #warning {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 0, 0, 0.9);
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      padding: 12px 10px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
       z-index: 9999;
-      pointer-events: none;
+      background: yellow;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 5px solid red;
+      box-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      animation: flash 1.5s infinite, pulse 1.5s infinite, glow 2s infinite alternate;
     }
+    @keyframes flash {
+      0%, 100% { background: yellow; color: red; }
+      50% { background: red; color: yellow; }
+    }
+    @keyframes pulse {
+      0%,100% { transform:scale(1); }
+      50% { transform:scale(1.15); }
+    }
+    @keyframes glow {
+      from { box-shadow:0 0 10px red,0 0 20px red,0 0 30px red; }
+      to { box-shadow:0 0 20px red,0 0 40px red,0 0 60px red; }
+    }
+    .warning-icon {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity:1 }
+      50% { opacity:0 }
+    }
+
     #player {
       position: absolute;
       top: 0;
@@ -38,7 +75,11 @@
   </style>
 </head>
 <body>
-  <div id="warning">⚠️⚠️⚠️ MUST BE USING AD BLOCKER & VPN FOR THE STREAM TO WORK ⚠️⚠️⚠️ FOLLOW UNITEDAILYX & GOFUTBALX ON X ✅️</div>
+  <div id="warning">
+    <span class="warning-icon">⚠️</span>
+    MUST BE USING AD BLOCKER 🚫 & VPN ⚠️ — FOLLOW UNITEDDAILYX & GOFUTBALX ON X ✅️
+    <span class="warning-icon">⚠️</span>
+  </div>
   <iframe id="player"
     src="https://sportzonline.site/channels/hd/hd1.php"
     allowfullscreen="yes"
